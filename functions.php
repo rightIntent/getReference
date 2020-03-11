@@ -1,4 +1,44 @@
 <?php
+
+/*------------------- Constants -------------------*/
+
+// connection 
+$conn = [
+    'host' => 'localhost',
+    'dbname' => 'reference',
+    'root' => 'root',
+    'password' => ''
+];
+
+$offer=[
+    'ID',
+    'F.I.SH',
+    'Ishlayotgan fakultet, kafedra yoki bo’lim nomi',
+    'Lavozimi',
+    'Passport raqami',
+    'Tug\'ilgan sanasi',
+    'Kirgan sanasi',
+    'Ketgan sanasi',
+    'Holati'
+ ];
+ $student=[
+     'ID',
+     'F.I.Sh',
+     'Fakulteti',
+     'Yo\'nalishi',
+     'Passport seriya va raqami',
+     'Kursi',
+     'Guruh',
+     'Ta\'lim asosi',
+     'Darajasi',
+     'Tug\'ilgan sanasi',
+     'Kirgan yili',
+     'Ketgan yili',
+     'Holati'   
+ ];
+
+    /*------------------- functions -------------------*/
+
     function add_slesh( $arr ) {
     $find = '';
     for ( $i = 0; $i < strlen( $arr ); $i++ ) {
@@ -30,9 +70,10 @@
         }
 
         public function SELECTIF($tableState, $passport){
-            $sql = "SELECT * FROM $tableState[0] WHERE `passport` = '$passport' and `state` = '$tableState[1]'" ;
+
+            $sql = "SELECT ts.*, f.name faculty, d.name direction FROM $tableState[0] ts JOIN directions d ON ts.faculty_id = d.faculty_id and ts.direction_id = d.direction_id JOIN facultys f ON f.faculty_id = d.faculty_id WHERE `passport` = '$passport' and `state` = '$tableState[1]'" ;
             $query = $this-> pdo-> prepare($sql);
-            $query-> execute(); 
+            $query-> execute();
             return $query-> fetch(PDO::FETCH_ASSOC);
         }
 
@@ -82,30 +123,4 @@
         }
     };
 
-    $offer=[
-        'ID',
-        'F.I.SH',
-        'Ishlayotgan fakultet, kafedra yoki bo’lim nomi',
-        'Lavozimi',
-        'Passport raqami',
-        'Tug\'ilgan sanasi',
-        'Kirgan sanasi',
-        'Ketgan sanasi',
-        'Holati'
-     ];
-     $student=[
-         'ID',
-         'F.I.Sh',
-         'Fakulteti',
-         'Yo\'nalishi',
-         'Passport seriya va raqami',
-         'Kursi',
-         'Guruh',
-         'Ta\'lim asosi',
-         'Darajasi',
-         'Tug\'ilgan sanasi',
-         'Kirgan yili',
-         'Ketgan yili',
-         'Holati'   
-     ]
 ?>

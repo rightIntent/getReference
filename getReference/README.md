@@ -1,1 +1,0 @@
-# TDIU ning xodimlari, talabalari, harbiylari uchun ma'lumotnoma olish darchasi

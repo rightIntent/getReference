@@ -11,7 +11,7 @@
     <div class="container mt-0 ">
          <div class="row text-center justify-content-center ">
             <div class="col-lg-3  col-4">
-                <a href="/?route=student_active">
+                <a href="/?route=students_active">
                     <div class="box" id="student" data-id="student">
                         <img  src="/img/student.png" alt="">
                         <p>Talaba <br><span>(ta'lim olayotgan)</span></p>
@@ -29,7 +29,7 @@
                 </a>
             </div>
             <div class="col-lg-3  col-4">
-                <a href="/?route=student_active_026">
+                <a href="/?route=students_active_026">
                     <div class="box" id="soldier_026" data-id="soldier">
                         <img  src="/img/soldier.png" alt="">
                         <p>Harbiy F-26 <br><span>(1-kurs uchun)</span></p>    
@@ -40,7 +40,7 @@
         </div>
         <div class="row text-center justify-content-center">
             <div class="col-lg-3 col-4">
-                <a href="/?route=student_passive">
+                <a href="/?route=students_passive">
                     <div class="box" id="non_student" data-id="non_student">
                         <img  src="/img/non_student.png" alt="">
                         <p>Talaba <br><span>(yakunlagan)</span></p>
@@ -58,7 +58,7 @@
                 </a>
             </div>
             <div class="col-lg-3 col-4">
-                <a href="/?route=student_active_028">
+                <a href="/?route=students_active_028">
                     <div class="box" id="soldier_028" data-id="soldier">
                         <img src="/img/soldier.png" alt="">
                         <p>Harbiy F-28 <br><span>(2,3,4-kurslar uchun)</span></p>
