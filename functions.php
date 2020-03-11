@@ -70,6 +70,7 @@ $offer=[
         }
 
         public function SELECTIF($tableState, $passport){
+
             $sql = "SELECT ts.*, f.name faculty, d.name direction FROM $tableState[0] ts JOIN directions d ON ts.faculty_id = d.faculty_id and ts.direction_id = d.direction_id JOIN facultys f ON f.faculty_id = d.faculty_id WHERE `passport` = '$passport' and `state` = '$tableState[1]'" ;
             $query = $this-> pdo-> prepare($sql);
             $query-> execute();
@@ -102,7 +103,7 @@ $offer=[
             $string = implode( ',', $key );
             $value = ":". implode( ', :', $key );
             $sql = "INSERT INTO $table ($string) VALUES ($value)";
-            $query = $this->pdo->prepare( $sql );
+            $query = $this->pdo->prepare( $sql ); 
             $query->execute( $data );
         }
 
@@ -121,6 +122,5 @@ $offer=[
             $query->execute();
         }
     };
-
 
 ?>
